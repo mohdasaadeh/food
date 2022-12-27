@@ -8,8 +8,8 @@ export const SearchBar = () => {
       <TextInput
         style={styles.textInput}
         placeholder="Search"
-        autoCapitalize="none"
-        autoComplete={false}
+        autoCorrect={false}
+        autoComplete="off"
       />
     </View>
   );
