@@ -1,12 +1,19 @@
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 
 import { SearchBar } from "../components";
 
 export const SearchScreen = () => {
+  const [term, setTerm] = useState("");
+
   return (
     <View style={styles.container}>
-      <SearchBar />
+      <SearchBar
+        term={term}
+        setTerm={setTerm}
+        onSubmit={() => console.log(term)}
+      />
       <StatusBar style="auto" />
     </View>
   );
