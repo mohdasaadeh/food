@@ -16,6 +16,16 @@ export const getRestaurantsByTerm = async (
 
     resolveAction(response.data.businesses);
   } catch (error) {
-    rejectAction(error.response);
+    rejectAction(error.response.data.error);
+  }
+};
+
+export const getRestaurantById = async (id, resolveAction, rejectAction) => {
+  try {
+    const response = await api.get(`/${id}`);
+
+    resolveAction(response.data);
+  } catch (error) {
+    rejectAction(error.response.data.error);
   }
 };

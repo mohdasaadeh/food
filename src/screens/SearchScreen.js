@@ -15,6 +15,8 @@ export const SearchScreen = () => {
   };
 
   const rejectAction = (error) => {
+    console.log(error.code);
+
     setError(error);
   };
 
